@@ -3,3 +3,7 @@ Debug
 .idea
 cmake*
 CMake*
+.metadata
+.settings
+*.eclipse*
+*.cousera.cdt*
