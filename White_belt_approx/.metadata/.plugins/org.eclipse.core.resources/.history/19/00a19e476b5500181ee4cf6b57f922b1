@@ -1,0 +1,13 @@
+
+#include <iostream>
+using namespace std;
+
+struct Incognizable {
+	int first = 0;
+	int second = 0;
+};
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

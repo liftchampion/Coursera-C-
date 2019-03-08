@@ -1,0 +1,234 @@
+#include <string>
+#include <iostream>
+#include <cassert>
+#include <vector>
+#include <map>
+
+/*
+ * 6
+ALL_BUSES
+BUSES_FOR_STOP Marushkino
+STOPS_FOR_BUS 32K
+NEW_BUS 32 3 Tolstopaltsevo Marushkino Vnukovo
+NEW_BUS 32K 6 Tolstopaltsevo Marushkino Vnukovo Peredelkino Solntsevo Skolkovo
+BUSES_FOR_STOP Vnukovo
+
+6
+ALL_BUSES
+BUSES_FOR_STOP Marushkino
+STOPS_FOR_BUS 32K
+NEW_BUS 32 3 Tolstopaltsevo1 Marushkino1 Vnukovo1
+NEW_BUS 32K 6 Tolstopaltsevo2 Marushkino2 Vnukovo2 Peredelkino2 Solntsevo2 Skolkovo2
+BUSES_FOR_STOP Vnukovo
+ *
+ *
+ */
+
+using namespace std;
+
+using BMInside = map<string, vector<string>>;
+
+enum class QueryType {
+  NewBus,
+  BusesForStop,
+  StopsForBus,
+  AllBuses
+};
+
+struct Query {
+  QueryType type;
+  string bus;
+  string stop;
+  vector<string> stops;
+};
+
+istream& operator >> (istream& is, Query& q) {
+  // Реализуйте эту функцию
+	string command;
+	is >> command;
+	if (command == "NEW_BUS") {
+		q.type = QueryType::NewBus;
+		is >> q.bus;
+		int stop_count;
+		is >> stop_count;
+		for (int i = 0; i < stop_count; i++) {
+			string stop;
+			is >> stop;
+			q.stops.push_back(stop);
+		}
+		return is;
+	}
+	if (command == "BUSES_FOR_STOP") {
+		q.type = QueryType::BusesForStop;
+		is >> q.stop;
+		return is;
+	}
+	if (command == "STOPS_FOR_BUS") {
+		q.type = QueryType::StopsForBus;
+		is >> q.bus;
+		return is;
+	}
+	if (command == "ALL_BUSES") {
+		q.type = QueryType::AllBuses;
+		return is;
+	}
+  return is;
+}
+
+struct BusesForStopResponse {
+  // Наполните полями эту структуру
+	BusesForStopResponse () {
+		no_stop = false;
+	}
+	vector<string> buses;
+	bool no_stop;
+};
+
+ostream& operator << (ostream& os, const BusesForStopResponse& r) {
+  // Реализуйте эту функцию
+	if (r.no_stop) {
+		os << "No stop";
+	}
+	for (const auto& bus : r.buses) {
+		os << bus << " ";
+	}
+	//os << endl;
+  return os;
+}
+
+struct StopsForBusResponse {
+  // Наполните полями эту структуру
+	StopsForBusResponse () {
+		no_bus = false;
+	}
+	BMInside stops;
+	bool no_bus;
+};
+
+ostream& operator << (ostream& os, const StopsForBusResponse& r) {
+  // Реализуйте эту функцию
+	if (r.no_bus) {
+		os << "No bus";
+	}
+	for (const auto& [stop, buses] : r.stops) {
+		os << "Stop " << stop <<":";
+		if (buses.size() == 1) {
+			os << " No interchange";
+		}
+		else {
+			for (const auto& bus : buses) {
+				os << " " << bus;
+			}
+		}
+		os << endl;
+	}
+  return os;
+}
+
+struct AllBusesResponse {
+  // Наполните полями эту структуру
+	AllBusesResponse () {
+		no_buses = false;
+	}
+	bool no_buses;
+	BMInside stops_for_buses;
+};
+
+ostream& operator << (ostream& os, const AllBusesResponse& r) {
+  // Реализуйте эту функцию
+	if (r.no_buses) {
+		os << "No buses";
+		return os;
+	}
+	for (const auto& [bus, stops] : r.stops_for_buses) {
+		os << "Bus " << bus << ":";
+		for (const auto& stop : stops) {
+			os << " " << stop;
+		}
+		os << endl;
+	}
+  return os;
+}
+
+class BusManager {
+public:
+  void AddBus(const string& bus, const vector<string>& stops) {
+    // Реализуйте этот метод
+	  stops_for_buses[bus] = stops;
+	  for (auto& stop : stops) {
+		  buses_for_stop[stop].push_back(bus);
+		  cout << "PUSHED NEW BUS " << bus <<" TO buses_for_stops" << "(stop: " << stop << ")" << endl;
+	  }
+  }
+
+  BusesForStopResponse GetBusesForStop(const string& stop) const {
+    // Реализуйте этот метод
+	  BusesForStopResponse resp;
+	  if (buses_for_stop.count(stop) == 0) {
+		  resp.no_stop = true;
+		  return resp;
+	  }
+	  for (const auto& bus : buses_for_stop.at(stop)) {
+		  resp.buses.push_back(bus);
+		  cout << "PUSHED NEW BUS TO RESPONSE" << endl;
+	  }
+	  return resp;
+  }
+
+  StopsForBusResponse GetStopsForBus(const string& bus) const {
+    // Реализуйте этот метод
+	  StopsForBusResponse resp;
+	  if (stops_for_buses.count(bus) == 0) {
+		  resp.no_bus = true;
+		  return resp;
+	  }
+	  for (const auto& stop : stops_for_buses.at(bus)) {
+		  resp.stops[stop] = buses_for_stop.at(stop);
+	  }
+	  return resp;
+  }
+
+  AllBusesResponse GetAllBuses() const {
+    // Реализуйте этот метод
+	  AllBusesResponse resp;
+	  if (stops_for_buses.size() == 0) {
+		  resp.no_buses = true;
+		  return resp;
+	  }
+	  resp.stops_for_buses = stops_for_buses;
+	  return resp;
+  }
+private:
+  BMInside buses_for_stop;
+  BMInside stops_for_buses;
+};
+
+// Не меняя тела функции main, реализуйте функции и классы выше
+
+int main() {
+  int query_count;
+  Query q;
+
+  cin >> query_count;
+
+  BusManager bm;
+  for (int i = 0; i < query_count; ++i) {
+    cin >> q;
+    switch (q.type) {
+    case QueryType::NewBus:
+      bm.AddBus(q.bus, q.stops);
+      break;
+    case QueryType::BusesForStop:
+      cout << bm.GetBusesForStop(q.stop) << endl;
+      break;
+    case QueryType::StopsForBus:
+      cout << bm.GetStopsForBus(q.bus) << endl;
+      break;
+    case QueryType::AllBuses:
+      cout << bm.GetAllBuses() << endl;
+      break;
+    }
+  }
+
+  return 0;
+}

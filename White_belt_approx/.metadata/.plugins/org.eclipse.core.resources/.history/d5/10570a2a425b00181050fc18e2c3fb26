@@ -1,0 +1,20 @@
+#include <vector>
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main() {
+	int num_nods;
+	int num_links;
+	cin >> num_nods >> num_links;
+	vector<set<int>> graph(num_nods);
+
+	for (int i = 0; i < num_links; i++) {
+		int node1;
+		int node2;
+		cin >> node1 >> node2;
+		graph[node1 - 1].insert(node2);
+		graph[node2 - 1].insert(node1);
+	}
+	return 0;
+}

@@ -1,0 +1,5 @@
+Debug
+*.xml
+.idea
+cmake*
+CMake*

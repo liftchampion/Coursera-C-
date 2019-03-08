@@ -1,0 +1,9 @@
+00:57:21 **** Rebuild of configuration Debug for project move str ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\move str.o" "..\\src\\move str.cpp" 
+g++ -o "move str.exe" "src\\move str.o" 
+C:/mingw-w64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+
+00:57:25 Build Finished (took 3s.998ms)
+

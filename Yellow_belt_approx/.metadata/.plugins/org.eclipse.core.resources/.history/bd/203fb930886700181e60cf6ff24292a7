@@ -1,0 +1,13 @@
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void PrintVectorPart(const vector<int>& numbers) {
+	vector<int> border = findif()
+}
+
+int main() {
+
+	return 0;
+}

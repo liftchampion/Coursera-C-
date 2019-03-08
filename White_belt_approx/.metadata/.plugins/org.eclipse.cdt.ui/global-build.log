@@ -1,0 +1,13 @@
+03:54:23 **** Rebuild of configuration Debug for project URA BLYAT ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\secondSource.o" "..\\src\\secondSource.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\projectName.o" "..\\src\\projectName.cpp" 
+g++ -o "URA BLYAT.exe" "src\\projectName.o" "src\\secondSource.o" 
+Info: Nothing to build for URA BLYAT
+Info: Nothing to build for URA BLYAT
+Info: Nothing to build for URA BLYAT
+16:38:13 **** Incremental Build of configuration Debug for project URA BLYAT ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\projectName.o" "..\\src\\projectName.cpp" 
+g++ -o "URA BLYAT.exe" "src\\projectName.o" "src\\secondSource.o" 
+Info: Nothing to build for URA BLYAT

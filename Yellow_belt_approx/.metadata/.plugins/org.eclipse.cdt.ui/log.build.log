@@ -1,0 +1,7 @@
+00:40:44 **** Incremental Build of configuration Debug for project log ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\log.o" "..\\src\\log.cpp" 
+g++ -o log.exe "src\\log.o" 
+
+00:40:45 Build Finished (took 1s.243ms)
+

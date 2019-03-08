@@ -1,0 +1,11 @@
+03:44:31 **** Incremental Build of configuration Debug for project Yandex 5 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Yandex 5.o" "..\\src\\Yandex 5.cpp" 
+..\src\Yandex 5.cpp: In function 'std::vector<std::__cxx11::basic_string<char> > WordToPrefixes(const string&)':
+..\src\Yandex 5.cpp:40:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < word.size(); i++) {
+                  ~~^~~~~~~~~~~~~
+g++ -o "Yandex 5.exe" "src\\Yandex 5.o" 
+
+03:44:33 Build Finished (took 1s.780ms)
+

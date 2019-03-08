@@ -1,0 +1,7 @@
+12:45:00 **** Incremental Build of configuration Debug for project anti_quicksort ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\anti_quicksort.o" "..\\src\\anti_quicksort.cpp" 
+g++ -o anti_quicksort.exe "src\\anti_quicksort.o" 
+
+12:45:01 Build Finished (took 1s.411ms)
+

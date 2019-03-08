@@ -1,0 +1,15 @@
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void PrintVectorPart(const vector<int>& numbers) {
+	auto border = find_if(numbers.begin()), numbers.end(),
+			[](int n){return n < 0});
+
+}
+
+int main() {
+
+	return 0;
+}

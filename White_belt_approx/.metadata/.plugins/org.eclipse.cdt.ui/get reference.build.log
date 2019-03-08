@@ -1,0 +1,7 @@
+00:28:20 **** Incremental Build of configuration Debug for project get reference ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\get reference.o" "..\\src\\get reference.cpp" 
+g++ -o "get reference.exe" "src\\get reference.o" 
+
+00:28:21 Build Finished (took 1s.539ms)
+

@@ -1,0 +1,17 @@
+01:51:03 **** Incremental Build of configuration Debug for project pal finder ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\pal finder.o" "..\\src\\pal finder.cpp" 
+..\src\pal finder.cpp: In function 'bool IsPalindrom(std::__cxx11::string)':
+..\src\pal finder.cpp:7:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < str.size()/2; ++i) {
+                  ~~^~~~~~~~~~~~~~
+..\src\pal finder.cpp: In function 'std::vector<std::__cxx11::basic_string<char> > PalindromFilter(std::vector<std::__cxx11::basic_string<char> >, int)':
+..\src\pal finder.cpp:20:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (i.size() >= minLenght && IsPalindrom(i) == true) {
+       ~~~~~~~~~^~~~~~~~~~~~
+g++ -o "pal finder.exe" "src\\pal finder.o" 
+C:/mingw-w64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+
+01:51:04 Build Finished (took 1s.186ms)
+

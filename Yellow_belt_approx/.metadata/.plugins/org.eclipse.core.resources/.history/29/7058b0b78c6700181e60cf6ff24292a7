@@ -1,0 +1,35 @@
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <string>
+using namespace std;
+
+string ConstuctWord(string::iterator begin, string::iterator end) {
+	string word;
+	for (auto it = begin; it != end; it++) {
+
+	}
+	return word;
+}
+
+vector<string> SplitIntoWords(const string& s) {
+	vector<string> words;
+	auto word_begin = s.begin();
+	auto word_end = s.begin();
+	auto space_it = s.begin();
+	while (space_it != s.end()) {
+		space_it = find (s.begin(), s.end(), ' ');
+		word_end = space_it;
+		ConstuctWord(word_begin, word_end);
+		word_begin = ++word_end;
+	}
+
+
+	return words;
+}
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

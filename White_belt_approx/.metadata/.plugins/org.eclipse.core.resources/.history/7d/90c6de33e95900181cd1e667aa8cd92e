@@ -1,0 +1,70 @@
+#include <string>
+#include <set>
+#include <map>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+void PrintV(const vector<string>& v) {
+	for (const auto& i : v) {
+		cout << i << " ";
+	}
+}
+void PrintS(const set<string>& s) {
+	for (const auto& i : s) {
+		cout << i << " ";
+	}
+}
+
+vector<string> WordToPrefixes (const string& word) {		// +++
+	//cout << "			Getting prefixes" << endl;
+
+	vector<string> prefixes;
+	string previus_prefix;
+	/*for (const auto& letter : word) {
+		prefixes.push_back(previus_prefix + letter);
+		previus_prefix += letter;
+	}*/
+	for (int i = 0; i < word.size(); i++) {
+			prefixes.push_back(previus_prefix + word[i]);
+			previus_prefix += word[i];
+	}
+	//PrintV(prefixes);
+
+	//cout << "			Prefixes got" << endl;
+	return prefixes;
+}
+
+int CountKeysForWord (const string& word, map<string, set<string>>& prefix_to_words) {
+	vector<string> word_prefixes = WordToPrefixes(word);
+	string good_prefix = word;
+	for (const string& prefix : word_prefixes) {
+		if (prefix_to_words[prefix].size() == 1) {
+			if (prefix_to_words[prefix].count(word) == 1) {
+				good_prefix = prefix;
+				break;
+			}
+		}
+		prefix_to_words[prefix].insert(word);
+	}
+	return good_prefix.size();
+}
+
+int main() {
+	int n;
+	cin >> n;
+	vector<string> words(n);
+	for (auto& i : words) {
+		cin >> i;
+	}
+		//cout << "words: ";
+		//PrintV(words);
+		//cout << endl;
+	map<string, set<string>> prefix_to_words;
+		//cout << "set created: ";
+		//PrintS(dict);
+		//cout << endl;
+
+
+	return 0;
+}

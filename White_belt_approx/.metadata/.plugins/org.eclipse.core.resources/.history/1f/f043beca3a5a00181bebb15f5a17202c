@@ -1,0 +1,24 @@
+#include <vector>
+#include <string>
+#include <iostream>
+#include <map>
+using namespace std;
+
+class TreeNode {
+public:
+	int AddWord(string& word) {
+		value = word[0];
+		word.erase(word.begin());
+	}
+private:
+	char value;
+	vector<TreeNode> children;
+};
+
+int main() {
+	string word;
+	cin >> word;
+	word.erase(word.begin());
+	cout << word << " " << word.size();
+	return 0;
+}

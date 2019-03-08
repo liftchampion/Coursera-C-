@@ -1,0 +1,17 @@
+01:33:08 **** Incremental Build of configuration Debug for project ways of init ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ways of init.o" "..\\src\\ways of init.cpp" 
+..\src\ways of init.cpp: In function 'int main()':
+..\src\ways of init.cpp:12:16: warning: unused variable 'b' [-Wunused-variable]
+   Incognizable b = {};
+                ^
+..\src\ways of init.cpp:13:16: warning: unused variable 'c' [-Wunused-variable]
+   Incognizable c = {0};
+                ^
+..\src\ways of init.cpp:14:16: warning: unused variable 'd' [-Wunused-variable]
+   Incognizable d = {0, 1};
+                ^
+g++ -o "ways of init.exe" "src\\ways of init.o" 
+
+01:33:09 Build Finished (took 984ms)
+

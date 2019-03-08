@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.eclipse.tools.templates.core
+Built-By: genie.cdt
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.core.resources
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+Export-Package: org.eclipse.tools.templates.core
+Bundle-Name: %pluginName
+Bundle-Version: 1.1.0.201802082100
+Bundle-Localization: plugin
+Bundle-Activator: org.eclipse.tools.templates.core.internal.Activator
+Created-By: Apache Maven 3.5.2
+Build-Jdk: 1.8.0_162
+
+Name: about.html
+SHA-256-Digest: GB6HEMo3QGUPUA/OczYQBvNmwMwsZtQf+7Zfs39qKaQ=
+
+Name: META-INF/maven/org.eclipse.tools.templates/org.eclipse.tools.tem
+ plates.core/pom.properties
+SHA-256-Digest: pkB7Gmq6OXsjsIFEgDVBIpUmeXGo1zhwDfZ+xM7m26k=
+
+Name: plugin.properties
+SHA-256-Digest: NWKLGi411Nuq6OhIcH74bVaBev7x2r67WYNc6dVWN5A=
+
+Name: META-INF/maven/org.eclipse.tools.templates/org.eclipse.tools.tem
+ plates.core/pom.xml
+SHA-256-Digest: nSYwn3HO0zHOfQdvND16YlV6uA/4mzvP1vDBzoThCAU=
+
+Name: org/eclipse/tools/templates/core/internal/Activator.class
+SHA-256-Digest: SMnoaBIG0ZiMPkfGpAY0lfGmnYuZa7gMuf9c4CsqeVQ=
+
+Name: org/eclipse/tools/templates/core/IGenerator.class
+SHA-256-Digest: 1CoFbTsQ7VxQ7tyr7vtMhrWJdXeq7DHtpMD6tU5xOok=
+

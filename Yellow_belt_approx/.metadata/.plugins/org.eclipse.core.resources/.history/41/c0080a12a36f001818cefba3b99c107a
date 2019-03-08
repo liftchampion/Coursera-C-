@@ -1,0 +1,86 @@
+#include <vector>
+#include <iostream>
+#include <deque>
+using namespace std;
+
+void GetTheWorst(int n) {
+	deque<int> nums;
+
+}
+
+
+void QSort(unsigned begin, unsigned end, vector<int>& arr, unsigned& count) {
+	//cerr << "QS" << endl;
+	if (end - begin == 1) {
+		return;
+	}
+	int key = arr[(begin + end) / 2];
+	//cerr << "key = " << key << endl;
+	unsigned left = begin;
+	unsigned right = end;
+	//cerr << "left = " << left << endl;
+	//cerr << "right = " << right << endl;
+	while (left <= right) {
+
+		//if (left == end) {
+		//	break;
+		//}
+		while (count++, arr[left] < key) {
+			left++;
+			//cerr << "DUCK " << left << endl;
+		}
+
+		//if (right == begin) {
+		//	break;
+		//}
+		while (count++, key < arr[right]) {
+			right--;
+			//cerr << "FUCK " << right << endl;
+		}
+		//if (left == end || right == begin) {
+		//	break;
+		//}
+		if (left <= right) {
+			int tmp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = tmp;
+			left++;
+			right--;
+			//cerr << "UCK " << left << " " << right << endl;
+		}
+	}
+
+	//cerr << "after iteration: " << endl;
+	//for (const auto& i : arr) {
+	//		cerr << i << " ";
+	//}
+	//cerr << endl << "left = " << left << endl;
+	//cerr << "right = " << right << endl;
+	if (begin < right) {
+		QSort(begin, right, arr, count);
+	}
+	if (left < end) {
+		QSort(left, end, arr, count);
+	}
+
+}
+
+int main() {
+	unsigned n;
+	cin >> n;
+	vector<int> v(n);
+	for (auto& i : v) {
+		cin >> i;
+	}
+	//for (const auto& i : v) {
+	//	cerr << i << " ";
+	//}
+	unsigned count = 0;
+	QSort(0u, n - 1, v, count);
+	cout << endl;
+	for (const auto& i : v) {
+		cout << i << " ";
+	}
+	cout << endl << count << endl;
+	return 0;
+}

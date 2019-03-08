@@ -1,0 +1,22 @@
+#include <string>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+#define GEN(Arg) int var_##Arg = 1;
+
+#define UNIQ_ID_ARG(arg) var_##arg
+
+#define GET_LINE __LINE__
+
+#define UNIQ_ID var_##GET_LINE
+
+int main() {
+  /*int UNIQ_ID = 0;
+  string UNIQ_ID = "hello";
+  vector<string> UNIQ_ID = {"hello", "world"};
+  vector<int> UNIQ_ID = {1, 2, 3, 4};*/
+	GEN(1)
+	int UNIQ_ID = 1;
+	return 0;
+}

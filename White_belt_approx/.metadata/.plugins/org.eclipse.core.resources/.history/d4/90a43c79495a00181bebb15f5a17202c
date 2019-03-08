@@ -1,0 +1,97 @@
+#include <vector>
+#include <string>
+#include <iostream>
+#include <map>
+using namespace std;
+
+
+
+class TreeNode {
+public:
+	TreeNode () {
+		value = '#';
+		num_words = 0;
+		end_of_word = false;
+	}
+	void AddWord(string& word) {
+		//cout << "Adding word " << word << " now letter is " << word[0] << endl;
+		value = word[0];
+		if (word.size() > 0) {   	// ??? ÊÀÊ ÁÛÒÜ Ñ ÏÎÑËÅÄÍÅÉ ÁÓÊÂÎÉ ÑËÎÂÀ??? Hello Hell
+			num_words++;
+		}
+
+		word.erase(word.begin());
+		if (word.size() > 0) {
+			children[word[0]].AddWord(word);
+		}
+		else {
+			end_of_word = true;
+		}
+	}
+	void CountKeys (string& word, int& num_keys) {   //CATCH INT NUM_KEYS;
+		char letter = word[0];
+		word.erase(word.begin());
+		if (value == '#') {
+			throw -1;
+		}
+		if (num_words <= 1) {
+
+		}
+	}
+	void Print () const {
+		//cout << "Trying to print" << endl;
+		cout << value << "(" << num_words << ")" << "<" << end_of_word << ">" << " ";
+		for (const auto& child : children) {
+			child.second.Print();
+		}
+	}
+private:
+	char value;
+	int num_words;
+	bool end_of_word;
+	map<char, TreeNode> children;
+};
+
+
+class Forest {
+public:
+	void AddWord(string word) {
+		//cout << "Adding word " << word << " now letter is " << word[0] << endl;
+		trees[word[0]].AddWord(word);
+	}
+	void CountKeys(string word, int& num_keys){
+		char letter = word[0];
+		word.erase(word.begin());
+		trees[letter].CountKeys(word, num_keys);
+	}
+	void Print () const {
+		//cout << "Trying to print" << endl;
+		for (const auto& tree : trees) {
+			tree.second.Print();
+		}
+		cout << endl;
+	}
+private:
+	map<char, TreeNode> trees;
+};
+
+
+
+
+int main() {
+	string word = "hello";
+	//cin >> word;
+
+	Forest forest;
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; ++i) {
+		string word;
+		cin >> word;
+		forest.AddWord(word);
+	}
+
+	cout << endl;
+	forest.Print();
+	return 0;
+}

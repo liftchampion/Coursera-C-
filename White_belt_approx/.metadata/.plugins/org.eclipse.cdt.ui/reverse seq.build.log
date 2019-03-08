@@ -1,0 +1,13 @@
+01:11:10 **** Rebuild of configuration Debug for project reverse seq ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\reverse seq.o" "..\\src\\reverse seq.cpp" 
+..\src\reverse seq.cpp: In function 'void Reverse(std::vector<int>&)':
+..\src\reverse seq.cpp:12:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < s.size() / 2; ++i) {
+                  ~~^~~~~~~~~~~~~~
+g++ -o "reverse seq.exe" "src\\reverse seq.o" 
+C:/mingw-w64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.3.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+
+01:11:12 Build Finished (took 1s.336ms)
+

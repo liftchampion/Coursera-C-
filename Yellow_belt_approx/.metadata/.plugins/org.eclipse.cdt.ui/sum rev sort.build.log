@@ -1,0 +1,10 @@
+16:50:39 **** Incremental Build of configuration Debug for project sum rev sort ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\sum rev sort.o" "..\\src\\sum rev sort.cpp" 
+..\src\sum rev sort.cpp:6:10: fatal error: sum_reverse_sort.h: No such file or directory
+ #include "sum_reverse_sort.h"
+          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+
+16:50:40 Build Finished (took 286ms)
+

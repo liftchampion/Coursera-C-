@@ -1,0 +1,55 @@
+#include <vector>
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void PrintVector(const vector<int>& v) {
+	for (const auto& i : v) {
+		cout << i << " ";
+	}
+}
+
+template <class Iterator>
+void PrintIts(Iterator begin, Iterator end) {
+	for (auto it = begin; it != end; it++) {
+		cout << *it << " ";
+	}
+}
+
+
+template <class Iterator>
+Iterator SetMid(stack<int>& nums, Iterator seq_begin, Iterator seq_end) {
+	auto mid_it = seq_begin + (seq_end - 1 - seq_begin) / 2;
+	*mid_it = nums.top();
+	nums.pop();
+	return mid_it;
+}
+
+template <class Iterator>
+void MakeWorst(stack<int>& nums, Iterator seq_begin, Iterator seq_end) {
+	if (seq_end - seq_begin < 2) {
+		cerr << "small vector" << endl;
+		return;
+	}
+	cerr << "MakeWorst" << endl;
+	PrintIts(seq_begin, seq_end);
+	Iterator mid_it = SetMid(nums, seq_begin, seq_end);
+	MakeWorst(nums, seq_begin, mid_it);
+	MakeWorst(nums, mid_it, seq_end);
+}
+
+
+int main() {
+	int n;
+	cin >> n;
+	stack<int> nums;
+	for (int i = 1; i <= n; i++) {
+		nums.push(i);
+	}
+	vector<int> sequence(n);
+	MakeWorst(nums, sequence.begin(), sequence.end());
+
+	PrintVector(sequence);
+
+	return 0;
+}

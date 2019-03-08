@@ -1,0 +1,55 @@
+18:23:05 **** Incremental Build of configuration Debug for project region base ****
+Info: Internal Builder is used for build
+g++ --std=c++1z -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\region base.o" "..\\src\\region base.cpp" 
+..\src\region base.cpp:19:22: error: 'Region' does not name a type; did you mean 'union'?
+ bool operator<(const Region& lhs, const Region& rhs) {
+                      ^~~~~~
+                      union
+..\src\region base.cpp:19:41: error: 'Region' does not name a type; did you mean 'union'?
+ bool operator<(const Region& lhs, const Region& rhs) {
+                                         ^~~~~~
+                                         union
+..\src\region base.cpp:19:52: error: 'bool operator<(const int&, const int&)' must have an argument of class or enumerated type
+ bool operator<(const Region& lhs, const Region& rhs) {
+                                                    ^
+..\src\region base.cpp:24:41: error: 'Region' was not declared in this scope
+ int FindMaxRepetitionCount(const vector<Region>& regions) {
+                                         ^~~~~~
+..\src\region base.cpp:24:41: note: suggested alternative: 'union'
+ int FindMaxRepetitionCount(const vector<Region>& regions) {
+                                         ^~~~~~
+                                         union
+..\src\region base.cpp:24:47: error: template argument 1 is invalid
+ int FindMaxRepetitionCount(const vector<Region>& regions) {
+                                               ^
+..\src\region base.cpp:24:47: error: template argument 2 is invalid
+..\src\region base.cpp: In function 'int FindMaxRepetitionCount(const int&)':
+..\src\region base.cpp:26:7: error: 'Region' was not declared in this scope
+   map<Region, int> repetion_count;
+       ^~~~~~
+..\src\region base.cpp:26:7: note: suggested alternative: 'regions'
+   map<Region, int> repetion_count;
+       ^~~~~~
+       regions
+..\src\region base.cpp:26:18: error: template argument 1 is invalid
+   map<Region, int> repetion_count;
+                  ^
+..\src\region base.cpp:26:18: error: template argument 3 is invalid
+..\src\region base.cpp:26:18: error: template argument 4 is invalid
+..\src\region base.cpp:27:14: error: 'Region' does not name a type; did you mean 'regions'?
+   for (const Region& region : regions) {
+              ^~~~~~
+              regions
+..\src\region base.cpp:30:3: error: expected ';' before 'return'
+   return result;
+   ^~~~~~
+..\src\region base.cpp:30:3: error: expected primary-expression before 'return'
+..\src\region base.cpp:30:3: error: expected ';' before 'return'
+..\src\region base.cpp:30:3: error: expected primary-expression before 'return'
+..\src\region base.cpp:30:3: error: expected ')' before 'return'
+..\src\region base.cpp:26:20: warning: unused variable 'repetion_count' [-Wunused-variable]
+   map<Region, int> repetion_count;
+                    ^~~~~~~~~~~~~~
+
+18:23:06 Build Finished (took 953ms)
+

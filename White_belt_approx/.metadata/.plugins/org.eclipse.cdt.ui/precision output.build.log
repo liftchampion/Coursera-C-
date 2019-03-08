@@ -1,0 +1,7 @@
+02:38:01 **** Incremental Build of configuration Debug for project precision output ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\precision output.o" "..\\src\\precision output.cpp" 
+g++ -o "precision output.exe" "src\\precision output.o" 
+
+02:38:02 Build Finished (took 1s.288ms)
+

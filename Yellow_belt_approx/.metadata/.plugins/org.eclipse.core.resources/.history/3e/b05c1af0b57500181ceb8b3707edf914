@@ -1,0 +1,17 @@
+#include <string>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+#define GENERATE_FUNCTION(Argument) void func_##Argument(){ cout << "1"; }
+
+#define UNIQ_ID
+
+int main() {
+  /*int UNIQ_ID = 0;
+  string UNIQ_ID = "hello";
+  vector<string> UNIQ_ID = {"hello", "world"};
+  vector<int> UNIQ_ID = {1, 2, 3, 4};*/
+	GENERATE_FUNCTION(1)
+	return 0;
+}

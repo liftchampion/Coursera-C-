@@ -1,0 +1,123 @@
+#include <vector>
+#include <string>
+#include <iostream>
+#include <map>
+using namespace std;
+
+
+
+class TreeNode {
+public:
+	TreeNode () {
+		value = '#';
+		num_words = 0;
+		end_of_word = false;
+	}
+	void AddWord(string& word) {
+		//cout << "Adding word " << word << " now letter is " << word[0] << endl;
+		value = word[0];
+		if (word.size() > 0) {   	// ??? КАК БЫТЬ С ПОСЛЕДНЕЙ БУКВОЙ СЛОВА??? Hello Hell
+			num_words++;
+		}
+
+		word.erase(word.begin());
+		if (word.size() > 0) {
+			children[word[0]].AddWord(word);
+		}
+		else {
+			end_of_word = true;
+		}
+	}
+	void CountKeys (string& word, int num_keys) {   //CATCH INT; //передавать num_keys по дефолту равное -2
+		char letter = word[0];
+		word.erase(word.begin());
+		if (value == '#') {
+			throw -1;
+		}
+		if (num_words <= 1 && num_keys == -2) {
+			num_keys = word.size();
+		}
+		if (word.size() > 0) {
+			children[letter].CountKeys(word, num_keys);
+		}
+		if (word.size() == 0) {
+			if (end_of_word) {
+				throw num_keys;
+			}
+			else {
+				throw -1;
+			}
+		}
+	}
+	void Print () const {
+		//cout << "Trying to print" << endl;
+		cout << value << "(" << num_words << ")" << "<" << end_of_word << ">" << " ";
+		for (const auto& child : children) {
+			child.second.Print();
+		}
+	}
+private:
+	char value;
+	int num_words;
+	bool end_of_word;
+	map<char, TreeNode> children;
+};
+
+
+class Forest {
+public:
+	void AddWord(string word) {
+		//cout << "Adding word " << word << " now letter is " << word[0] << endl;
+		trees[word[0]].AddWord(word);
+	}
+	int CountKeys(string& word){		//передавать num_keys по дефолту равное -2
+		char letter = word[0];
+		string word_copy = word;
+		word.erase(word.begin());
+		int num_keys;
+		try {
+			trees[letter].CountKeys(word, -2);
+		}
+		catch (int keys_left) {
+			if (keys_left == -1) {
+				num_keys = word.size();
+				AddWord(word_copy);
+			}
+			else {
+				num_keys = word.size() - keys_left;
+			}
+		}
+	return num_keys;
+	}
+	void Print () const {
+		//cout << "Trying to print" << endl;
+		for (const auto& tree : trees) {
+			tree.second.Print();
+		}
+		cout << endl;
+	}
+private:
+	map<char, TreeNode> trees;
+};
+
+
+
+
+int main() {
+	string word = "hello";
+	//cin >> word;
+
+	Forest forest;
+	int n;
+	cin >> n;
+	int num_keys = 0;
+	for (int i = 0; i < n; ++i) {
+		string word;
+		cin >> word;
+		num_keys += forest.CountKeys(word);
+	}
+
+	cout << num_keys << endl;
+	forest.Print();
+	return 0;
+}

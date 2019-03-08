@@ -1,0 +1,21 @@
+#include <vector>
+#include <string>
+#include <iostream>
+using namespace std;
+
+enum class Gender {
+  FEMALE,
+  MALE
+};
+
+struct Person {
+  int age;  // возраст
+  Gender gender;  // пол
+  bool is_employed;  // имеет ли работу
+};
+
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

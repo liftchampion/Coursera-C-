@@ -1,0 +1,19 @@
+#include <map>
+#include <string>
+#include <iostream>
+using namespace std;
+
+void ChangeCapital (map<string, string>& list, const string& country, const string& new_capital) {
+	int output_case;
+	for (auto i : list) {
+		if (list.first == country) {
+
+		}
+	}
+
+}
+
+int main() {
+	map<string, string> list;
+	return 0;
+}

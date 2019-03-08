@@ -1,0 +1,15 @@
+01:33:47 **** Incremental Build of configuration Debug for project learner_main ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\learner_main.o" "..\\src\\learner_main.cpp" 
+..\src\learner_main.cpp: In function 'int main()':
+..\src\learner_main.cpp:21:32: error: no matching function for call to 'Learner::Learn(std::vector<std::__cxx11::basic_string<char> >&)'
+     cout << learner.Learn(words) << "\n";
+                                ^
+In file included from ..\src\learner_main.cpp:1:0:
+..\src\learner.h:13:7: note: candidate: int Learner::Learn(const std::set<std::__cxx11::basic_string<char> >&)
+   int Learn(const set<string>& words) {
+       ^~~~~
+..\src\learner.h:13:7: note:   no known conversion for argument 1 from 'std::vector<std::__cxx11::basic_string<char> >' to 'const std::set<std::__cxx11::basic_string<char> >&'
+
+01:33:48 Build Finished (took 1s.148ms)
+
