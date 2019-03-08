@@ -1,7 +1,0 @@
-15:58:43 **** Incremental Build of configuration Debug for project decomposition ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\decomposition.o" "..\\src\\decomposition.cpp" 
-g++ -o decomposition.exe "src\\decomposition.o" 
-
-15:58:45 Build Finished (took 1s.807ms)
-

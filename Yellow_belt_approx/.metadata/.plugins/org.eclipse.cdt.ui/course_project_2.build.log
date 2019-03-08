@@ -1,8 +1,0 @@
-18:07:43 **** Incremental Build of configuration Debug for project course_project_2 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\database.o" "..\\src\\database.cpp" 
-g++ -o course_project_2.exe "src\\condition_parser.o" "src\\database.o" "src\\date.o" "src\\main.o" "src\\node.o" "src\\parse_event.o" "src\\token.o" 
-
-18:07:48 Build Finished (took 4s.861ms)
-

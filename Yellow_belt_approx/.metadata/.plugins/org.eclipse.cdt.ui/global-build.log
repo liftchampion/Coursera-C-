@@ -1,6 +1,0 @@
-03:26:22 **** Incremental Build of configuration Debug for project http_request ****
-Info: Internal Builder is used for build
-g++ --std=c++1z -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\http_request.o" "..\\src\\http_request.cpp" 
-g++ --std=c++1z -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\stats.o" "..\\src\\stats.cpp" 
-g++ -o http_request.exe "src\\http_request.o" "src\\stats.o" 
-Info: Nothing to build for http_request

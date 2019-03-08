@@ -1,7 +1,0 @@
-17:26:54 **** Incremental Build of configuration Debug for project monthly deals ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\monthly deals.o" "..\\src\\monthly deals.cpp" 
-g++ -o "monthly deals.exe" "src\\monthly deals.o" 
-
-17:26:55 Build Finished (took 1s.369ms)
-

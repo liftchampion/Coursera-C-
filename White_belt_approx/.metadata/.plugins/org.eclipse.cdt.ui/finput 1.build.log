@@ -1,7 +1,0 @@
-02:01:34 **** Incremental Build of configuration Debug for project finput 1 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\finput 1.o" "..\\src\\finput 1.cpp" 
-g++ -o "finput 1.exe" "src\\finput 1.o" 
-
-02:01:35 Build Finished (took 1s.299ms)
-

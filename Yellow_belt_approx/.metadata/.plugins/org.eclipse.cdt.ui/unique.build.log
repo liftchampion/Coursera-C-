@@ -1,7 +1,0 @@
-23:06:27 **** Rebuild of configuration Debug for project unique ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\unique.o" "..\\src\\unique.cpp" 
-g++ -o unique.exe "src\\unique.o" 
-
-23:06:31 Build Finished (took 3s.389ms)
-

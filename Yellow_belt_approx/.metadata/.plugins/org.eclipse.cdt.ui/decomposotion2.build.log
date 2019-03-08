@@ -1,7 +1,0 @@
-02:33:11 **** Incremental Build of configuration Debug for project decomposotion2 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
-g++ -o decomposotion2.exe "src\\bus_manager.o" "src\\main.o" "src\\query.o" "src\\responses.o" 
-
-02:33:15 Build Finished (took 4s.375ms)
-

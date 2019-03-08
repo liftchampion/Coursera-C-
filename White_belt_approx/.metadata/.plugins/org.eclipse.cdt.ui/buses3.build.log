@@ -1,7 +1,0 @@
-17:01:36 **** Incremental Build of configuration Debug for project buses3 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\buses3.o" "..\\src\\buses3.cpp" 
-g++ -o buses3.exe "src\\buses3.o" 
-
-17:01:38 Build Finished (took 2s.289ms)
-

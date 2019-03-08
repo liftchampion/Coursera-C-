@@ -1,7 +1,0 @@
-18:54:58 **** Incremental Build of configuration Debug for project capitals ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\capitals.o" "..\\src\\capitals.cpp" 
-g++ -o capitals.exe "src\\capitals.o" 
-
-18:54:59 Build Finished (took 1s.797ms)
-
