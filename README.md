@@ -5,5 +5,6 @@
 + [красный пояс](https://www.coursera.org/learn/c-plus-plus-red?specialization=c-plus-plus-modern-development)  
 
 # Финальные задачи курсов
-+ Ядро многопоточной поисковой системы  
-+ Трекер задач с фильтрами
++ [Простой трекер событий](https://github.com/liftchampion/Coursera-C-/tree/master/White_belt_approx/Final%20Task/src)  
++ [Трекер событий с фильтрами]()  
++ [Ядро многопоточной поисковой системы]()  
