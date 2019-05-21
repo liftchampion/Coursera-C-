@@ -6,5 +6,5 @@
 
 # Финальные задачи курсов
 + [Простой трекер событий](https://github.com/liftchampion/Coursera-C-/tree/master/White_belt_approx/Final%20Task/src)  
-+ [Трекер событий с фильтрами]()  
++ [Трекер событий с фильтрами](https://github.com/liftchampion/Coursera-C-/tree/master/Yellow_belt_approx/course_project_2/src)  
 + [Ядро многопоточной поисковой системы]()  
